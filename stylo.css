@@ -1,0 +1,537 @@
+/*creamos variables*/
+:root{
+    --primary-color:#4f4aa6;
+    --secundary-color:#48ca95 ;
+    --bg-color: #f7f7f7;
+    --light-color:#ffff;
+    --dark-color:#000000;
+
+    --header-tittle-font:poppins-bold;
+    --secction-tittle-font:Poppins-SemiBold;
+    --text-font:poppins;
+    --menu-font:poppins-bolds;
+    --banner-subtittle-font:poppins-light
+    --banner-title-font:poppins;
+}
+
+/*sacamos los estilos que vienen por defecto en el nav*/
+
+*{
+    
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family:var(--text-font);
+}
+
+/*inportamos las letras*/
+
+@font-face {
+    font-family:poppins;
+    src: url(/proyecto-1/recursos/fonts/Poppins-Regular.ttf);
+}
+
+@font-face {
+    font-family:poppins-bolds;
+    src: url(/proyecto-1/recursos/fonts/Poppins-Bold.ttf);
+
+
+}@font-face {
+    font-family:poppins-extrabolds;
+    src: url(/proyecto-1/recursos/fonts/Poppins-ExtraBold.ttf);
+
+}
+@font-face {
+    font-family:poppins-semibolds ;
+    src: url(/proyecto-1/recursos/fonts/Poppins-SemiBold.ttf);
+}
+
+@font-face {
+    font-family: poppins-light;
+    src: url(/proyecto-1/recursos/fonts/Poppins-Light.ttf);
+}
+
+/*inicio del header*/
+
+header{
+    background-image: url(/proyecto-1/recursos/images/banner.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    display: flex;
+    flex-direction: column;
+    min-height: 80vh;
+}
+
+nav{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 30px;
+}
+
+nav ul {
+    display: flex;
+    list-style-type:none;
+    
+}
+nav ul li{
+    padding: 10px;
+    color: var(--light-color);
+}
+
+nav ul li a {
+    color: var(--light-color);
+    text-decoration: none;
+    font-family: var(--menu-font);
+}
+nav ul li a:hover {
+    color: var(--secundary-color);
+}
+.selected{
+    color: var(--secundary-color);
+}
+
+.header-img{
+    margin: 5px 25px;   
+}
+
+
+.header-content{
+    display: flex;
+    justify-content: center;
+    margin-top: 5%;/*espacio de arriba*/
+    margin-bottom: 50px;
+    margin-left: 5px;
+   
+}
+
+.header-content-text{
+    max-width: 500px;
+    color:var(--light-color);
+    display: flex;
+    flex-direction: column; 
+}
+
+.header-tittle{
+font-size: 60px;
+font-family: var(--header-tittle-font);
+}
+.header-subtittle{
+    font-size: 30px;
+}
+
+.header-content-btns{
+margin-top: 50px;
+}
+
+.btn{
+    color: var(--light-color);
+    padding: 15px 60px;
+    border: 2px solid var(--light-color);
+    text-decoration: none;/*quita el subrayado*/
+    margin: 0 5px;
+
+}
+.btn:hover{
+    background-color: var(--secundary-color);
+    border: 2px solid var(--secundary-color);/*ademas de cambiar el color con este, cambia el borde al color verde cuando pasamos el mouse */
+}
+
+/*comenzamos el header responsivo para adaptarlo
+a cualquier tamaño de pantalla,celu,tablet,etc*/
+
+.menu-mobile{
+    display: none;
+}
+
+@media(max-width:800px){
+    .menu-mobile{
+        display: flex;
+    }
+    .menu-screen{
+        display: none;
+    }
+}
+@media(max-width:1300px){
+    .header-content{
+        flex-direction: column;
+    }
+    .header-content-text{
+        margin-left: 20px;
+    }
+    .header-tittle{
+     font-size: 50px; 
+    }
+    .header-subtittle{
+     font-size: 20px;
+    }
+    .header-content-text p {
+        font-size: 16px;
+    }
+    .btn{ 
+        padding: 10px 30px;
+    }
+
+    .header-img{
+        margin: 50px 10px; 
+        width: 95%;
+        height: 100%; 
+        max-width: 500px;
+    }
+}
+ /*iniciamos la primer seccion*/
+.cards{
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 25px;
+    padding-bottom: 45px;
+    flex-wrap: wrap;
+}
+
+
+.card{
+    margin: 5px;
+    padding: 50px;
+    border: 1px solid var(--secundary-color);
+    border-radius: 15px;
+    max-width: 400px;
+    display: flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items: center;
+}
+
+.card h5{
+    font-size: 18px;
+    margin-top: 50px;
+    margin-bottom: 15px;
+}
+
+.card p{
+    text-align: center;
+}
+
+/*INICIAMOS LA SEGUNDA SECCION*/
+.products{
+    background-color:var(--bg-color);
+    display: flex;
+    flex-direction:column;
+    justify-content: center;
+    align-items: center;
+    padding-top: 50px;
+}
+
+.section-tittle{
+  text-transform: uppercase;
+  font-size: 24px;
+  font-family: var(--menu-font);
+  border-bottom: 1px solid var(--secundary-color);
+  margin-bottom: 25px;
+}
+
+.products-container{
+background-color: var(--light-color);
+width: 1100px;
+display: flex;
+flex-wrap: wrap;
+align-items: center;
+justify-content: space-around;
+padding-bottom: 25px;
+margin-bottom: 100px;
+}
+
+.products-cards{
+width: 203px;
+display: flex;
+flex-direction: column;
+margin: 50px;
+}
+
+.products-cards a{
+    background-color:var(--dark-color);
+    color: var(--light-color);
+    padding: 10px;
+    width: 100%;
+    text-decoration: none;
+    text-align: center;
+}
+
+.btn-secundary{
+    color: var(--secundary-color);
+    padding: 15px 60px;
+    border: 2px solid var(--secundary-color);
+    text-decoration: none;/*quita el subrayado*/
+    margin: 0 5px;
+}
+
+/*iniciamos el diseño responsivo de la segunda seccion*/
+
+@media(max-width:1100px){
+.products-container{
+    width: 96%;
+}
+}
+
+/*iniciamos 3° seccion banner*/
+
+.banner{
+    background-color: var(--primary-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 70px;
+}
+.banner-content{
+    display: flex;
+    justify-content: center;
+    margin-top: 5%;/*espacio de arriba*/
+    margin-bottom: 50px;
+    margin-left: 5px;
+   
+}
+
+.banner-header-content-text{
+    max-width: 500px;
+    color:var(--light-color);
+    display: flex;
+    flex-direction: column; 
+}
+
+.banner-header-tittle{
+    font-size: 50px;
+    font-family: var(--banner-title-font);
+    }
+.banner-header-subtittle{
+  font-size: 20px;
+  font-family: var(--banner-subtittle-font);
+}
+    
+.btn-primary-full{
+    color: var(--light-color);
+    padding: 15px 60px;
+    border: 2px solid var(--secundary-color);
+    text-decoration: none;/*quita el subrayado*/
+    margin: 0 5px;
+    background-color: var(--secundary-color);
+}
+.btn-primary-full:hover{
+    color: var(--secundary-color);
+    background-color: var(--primary-color);
+}
+/*iniciamos el diseño responsivo de la 3° seccion banner*/
+@media(max-width:800px){
+    .banner-content{
+    flex-direction: column;
+    }
+}
+
+/*iniciamos el diseño de la 4°section*/
+.reviews{
+display: flex;
+justify-content: center;
+align-items: center;
+flex-direction: column;
+padding: 50px;
+padding-bottom: 50px;
+}
+
+.review-card{
+width: 800px;
+}
+
+.review-card h5{
+    font-size: 28px;
+    margin-bottom: 30px;
+}
+ /*iniciamos el diseño responsivo de la 4°ta section*/
+ @media(max-width:800px){
+    .review-card{
+width: 96%;
+}
+ }
+
+ /*iniciamos section contact (5°ta y ultima section)*/
+ .contact{
+    background-image: url(/proyecto-1/recursos/images/contact_g.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 60px;
+    padding-bottom: 60px;
+    flex-direction: column;
+ }
+
+ .contact-form{
+    border: 1px solid var(--light-color);
+    padding: 50px;
+    width: 800px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+ }
+
+
+ .section-tittle-withe{
+    text-transform: uppercase;
+    font-size: 24px;
+    font-family: var(--menu-font);
+    border-bottom: 1px solid var(--light-color);
+    margin-bottom: 25px;
+    color: var(--light-color);
+  }
+
+  .contact-input{
+    width: 100%;
+    height: 50px;
+    margin: 10px 0px;
+    padding: 10px;
+    background-color: transparent;
+    box-shadow: none;
+    outline: none;
+    border: 1px solid var(--light-color);
+    color: var(--light-color);
+  }
+
+.contact-textarea{
+color: var(--light-color);
+background-color: transparent;
+margin: 10px 0px;
+padding: 10px;
+border: 1px solid var(--light-color);
+resize: none;
+width: 100%;
+height: 150px;
+}
+
+
+.contact-input::placeholder {
+    color: var(--light-color);
+    opacity: 1;
+  }
+
+.contact-input::-moz-placeholder { 
+    color: var(--light-color);
+    opacity: 1;
+  }
+  .contact-textarea::placeholder {
+    color: var(--light-color);
+    opacity: 1;
+  }
+
+  .contact-textarea::-moz-placeholder {
+    color: var(--light-color);
+    opacity: 1;
+  }
+  .contact-btn{
+    color: var(--light-color);
+    padding: 15px 60px;
+    border: 2px solid var(--secundary-color);
+    background-color: var(--secundary-color);
+    text-decoration: none;/*quita el subrayado*/
+    max-width: 150px;
+    border-radius: 25px;
+    margin-top: 40px;
+    cursor: pointer;
+  }
+
+  .contact-btn:hover {
+    color: var(--secundary-color);
+    background-color:transparent;
+  }
+
+  /*iniciamos el diseño responsivo de la 5ta section*/
+  @media(max-width:800px){
+    .contact-form{
+        width: 96%;
+    }
+  }
+
+  /*iniciamos la section del footer*/
+  footer{
+    background-image: url(/proyecto-1/recursos/images/footer.jpg);
+    background-size:cover ;
+    background-repeat:no-repeat;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+  }
+  .copyrights{
+   width: 1200px;
+   color: var(--light-color);
+   border-top: 1px solid var(--light-color);
+   padding: 10px;
+   margin: 20px;
+   text-align: center;
+  }
+
+  .footer-content{
+    width: 1200px;
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 70px;
+    margin-bottom: 25px;
+  }
+
+
+  .footer-card{
+    width: 300px;
+    padding: 20px;
+    color: var(--light-color);
+  }
+
+.footer-card h5{
+font-size: 20px;
+}
+
+.footer-card p {
+    font-size: 14px;
+}
+
+
+.sub-input{
+border-radius: 10px;
+padding: 10px;
+margin-top: 5px;
+margin-bottom: 10px;
+border:0;
+font-family: var(--secction-tittle-font);
+
+}
+.sub-btn{
+    color: var(--light-color);
+    padding: 7px 25px;
+    border: 2px solid var(--secundary-color);
+    background-color: var(--secundary-color);
+    text-decoration: none;/*quita el subrayado*/
+    border-radius: 10px;
+    margin-top: 5px;
+    cursor: pointer;
+  }
+
+  .sub-btn:hover {
+    color: var(--secundary-color);
+    background-color:transparent;
+  }
+  .social-icons *{
+    color: var(--light-color);
+    font-size: 24px;
+    margin-left: 3px;
+  }
+
+  /*iniciamos el responsivo del footer*/
+@media(max-width:1200px){
+ .footer-content{
+width: 96%;
+ }
+
+  .copyrights{
+width: 96%;
+  }
+}
